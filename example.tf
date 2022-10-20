@@ -4,6 +4,15 @@ terraform {
       source = "metalsoft-io/metalcloud"
     }
   }
+
+  cloud {
+    organization = "metalsoft"
+
+    workspaces {
+      name = "metalsoft-cicd-test"
+    }
+  }
+
 }
 
 provider "metalcloud" {
@@ -12,14 +21,6 @@ provider "metalcloud" {
    endpoint = var.endpoint
 
 }
-
-cloud {
-    organization = "metalsoft"
-
-    workspaces {
-      name = "metalsoft-cicd-test"
-    }
-  }
 
 # This is an infrastructure reference. It is needed to avoid a cyclic dependency where the 
 # infrastructure depends on the resources and vice-versa. This will create the infrastructure if it does not exist
