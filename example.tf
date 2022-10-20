@@ -52,24 +52,6 @@ resource "metalcloud_instance_array" "server1" {
 }
 
 
-resource "metalcloud_instance_array" "server2" {
-
-    infrastructure_id = data.metalcloud_infrastructure.infra.infrastructure_id
-
-    instance_array_label = "test-2"
-    instance_array_instance_count = 1
-    instance_array_boot_method = "local_drives"
-
-    instance_server_type{
-      instance_index=0
-      server_type_id=data.metalcloud_server_type.large.server_type_id
-    }
-
-    volume_template_id = tonumber(data.metalcloud_volume_template.ubuntu20.id)
-
-    instance_array_firewall_managed = false
-
-}
 
 
 # Use this resource to effect deploys of the above resources.
@@ -94,6 +76,5 @@ resource "metalcloud_infrastructure_deployer" "infrastructure_deployer" {
   # use either count or for_each in the resources or move everything that is dynamic into a module and make this depend on the module
   depends_on = [
     metalcloud_instance_array.server1,
-    metalcloud_instance_array.server2,
   ]
 }
