@@ -13,6 +13,14 @@ provider "metalcloud" {
 
 }
 
+cloud {
+    organization = "metalsoft"
+
+    workspaces {
+      name = "metalsoft-cicd-test"
+    }
+  }
+
 # This is an infrastructure reference. It is needed to avoid a cyclic dependency where the 
 # infrastructure depends on the resources and vice-versa. This will create the infrastructure if it does not exist
 # if the create_if_not_exists flag is set to true
