@@ -1,6 +1,6 @@
-#MetalSoft CI/CD example using github actions
+# MetalSoft CI/CD example using github actions
 
-Example terraform setup that can be used as part of a CI/CD pipeline.
+Example Terraform MetalSoft manifest that can be used as part of a CI/CD pipeline.
 
 ## To test
 Configure the following env variables. Note that the server type and volume types are also environment dependent.
