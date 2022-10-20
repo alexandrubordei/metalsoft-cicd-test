@@ -37,7 +37,7 @@ resource "metalcloud_instance_array" "server1" {
     infrastructure_id = data.metalcloud_infrastructure.infra.infrastructure_id
 
     instance_array_label = "test-1"
-
+    instance_array_instance_count = 1
     instance_array_boot_method = "local_drives"
 
     instance_server_type{
@@ -57,7 +57,7 @@ resource "metalcloud_instance_array" "server2" {
     infrastructure_id = data.metalcloud_infrastructure.infra.infrastructure_id
 
     instance_array_label = "test-2"
-
+    instance_array_instance_count = 1
     instance_array_boot_method = "local_drives"
 
     instance_server_type{
