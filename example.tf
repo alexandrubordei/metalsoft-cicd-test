@@ -38,7 +38,7 @@ data "metalcloud_volume_template" "ubuntu20" {
 }
 
 data "metalcloud_server_type" "large"{
-  server_type_name = "M.8.8.1.v2"
+  server_type_name = "M.12.8.1.v3"
 }
 
 resource "metalcloud_instance_array" "server1" {
